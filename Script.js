@@ -1,79 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".scroll-animate");
+  const images = document.querySelectorAll(".img-galeria");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible"); // aparece
-        } else {
-          entry.target.classList.remove("visible"); // desaparece => se repite siempre
-        }
-      });
-    },
-    {
-      root: null,
-      rootMargin: "0px 0px -100px 0px", // ajusta cuándo empieza
-      threshold: 0,
+  images.forEach(img => {
+    img.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      // Si ya está ampliada, se cierra
+      if (img.classList.contains("ampliada")) {
+        cerrarImagen(img);
+        return;
+      }
+
+      // Cerrar cualquier otra ampliada
+      document.querySelectorAll(".img-galeria.ampliada")
+        .forEach(i => cerrarImagen(i));
+
+      // Ampliar esta
+      img.classList.add("ampliada");
+      document.body.classList.add("imagen-ampliada");
+    });
+  });
+
+  // Cerrar al hacer clic en cualquier parte del body
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".img-galeria.ampliada")
+      .forEach(i => cerrarImagen(i));
+  });
+
+  // Cerrar con Escape
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".img-galeria.ampliada")
+        .forEach(i => cerrarImagen(i));
     }
-  );
+  });
 
-  elements.forEach((el) => observer.observe(el));
+  // Función para cerrar
+  function cerrarImagen(img) {
+    img.classList.remove("ampliada");
+    document.body.classList.remove("imagen-ampliada");
+  }
 });
-
-
-
-
-
-document.getElementById('animatedText').textContent = "Explorando gradientes con JS";
-
-
-
-
-
-    // Selecciona todos los elementos con la clase "exp-item"
-    const expItems = document.querySelectorAll(".exp-item");
-    document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".exp-item"); // Selecciona los elementos con la animación
-
-    const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate"); // Agrega la clase para activar la animación
-        }
-        });
-    },
-    {
-        root: null,
-        rootMargin: "0px 0px -200px 0px", 
-        threshold: 0,
-    }
-    );
-
-    elements.forEach((el) => observer.observe(el));
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".exp-item");
-
-    const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("animate"); 
-        } else {
-            entry.target.classList.remove("animate");
-        }
-        });
-    },
-    {
-        root: null,
-        rootMargin: "0px 0px -100px 0px",
-        threshold: 0,
-    }
-    );
-
-  elements.forEach((el) => observer.observe(el)); // Observa cada elemento
-});
-

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -27,11 +26,10 @@ a {
 
 
 .separador {
-    margin-top: 20px;
     height: 60px;
     width: 100%;
-    background: #dbd2cc42;
-    box-shadow: 0 0 10px #dbd2cc42;
+    background: #a39b9521;
+    box-shadow: 0 0 10px #dbd2cc4b;
 }
 
 
@@ -88,7 +86,7 @@ scale: 1;
 }
 
 .Logo-image {
-    height: 40px;
+    height: 50px;
     display: grid;
     place-items: center;
 }
@@ -128,6 +126,8 @@ scale: 1;
     justify-content: center;
 
     animation: aparecer 0.6s linear both;
+
+    box-shadow: #2B2B2B 0px 4px 8px;
 }
 
 .Presentacion-contenido {
@@ -191,6 +191,16 @@ scale: 1;
 
 
 /* CATALOGO */
+.Catalogo-titulo {
+        margin-top: 20px;
+    height: 60px;
+    width: 100%;
+    background: #dbd2cc42;
+    box-shadow: 0 0 10px #dbd2ccb9;
+}
+
+
+
 .Catalogo{
     animation: aparecer 0.6s linear both;
 }
@@ -261,6 +271,7 @@ h2 {
     width: 100%;
     height: 16rem;      
     object-fit: cover;
+    z-index: 10;
 
     background-color: #fff;
     border: 2px solid #d4d4d4;
@@ -336,6 +347,7 @@ dialog::backdrop {
     padding: 20px;
     text-align: center;
     margin: 20px;
+    margin-bottom: 80px;
     border-radius: 8px;
     box-shadow: 0 2px 5px #00000038;
 
@@ -438,7 +450,5 @@ footer {
       0% { background-position: 0% 50%; }
       100% { background-position: 100% 50%; }
     }
-
-
 
 
