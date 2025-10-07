@@ -3,7 +3,6 @@
 <head>
     <link rel="icon" href="/Imagenes/bitm.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="Script.js"></script>
     <link rel="icon" href="/home/Imagenes/bitm.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
@@ -30,10 +29,10 @@
     </header>
     <section class="Presentacion">
         <div class="Presentacion-contenido">
-            <div class="Presentacion-texto " id="Presentacion">
+            <div class="Presentacion-texto aparecerTexto" id="Presentacion">
             <h1 class="gradient-text">HomeGress: Elegancia en cada detalle</h1>
             </div>
-            <div class="Presentacion-subtexto ">
+            <div class="Presentacion-subtexto aparecerTexto">
                 <p>Pisos y enchapes en piedra laja que transforma tus espacios.</p>
             </div>
 
@@ -128,10 +127,14 @@ emocional de cada proyecto.</p>
             <p>Atendemos proyectos a todo el pais</p>
             <p>Escribenos y atenderemos tus dudas a la brevedad</p>
         </div>
-        <div class="Contacto-boton">
-            <img src="Imagenes/whatsapp-icon.svg" alt="WhatsApp" class="icono-whatsapp">
-            <a href="https://wa.me/573165177013?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20👍" target="_blank" class="btn-whatsapp"> Solicitar cotización en WhatsApp
-            </a>
+        <div>
+            <form id="whatsappForm" class="form-contacto scroll-animate">
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" name="email" placeholder="Tu correo (opcional)">
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit"><img src="Imagenes/whatsapp-icon.svg" alt="WhatsApp" class="icono-whatsapp">Enviar mensaje</button>
+            </form>
+
         </div>
     
         <div class="Redes-sociales">
@@ -149,9 +152,9 @@ emocional de cada proyecto.</p>
     <div>
         
     </div>
+    <button id="btnTop" title="Volver arriba">↑</button>
+
     <footer>© 2025 Homegress. Todos los derechos reservados.</footer>
-
-
-
+    <script src="Script.js" defer></script>
 </body>
 </html>
