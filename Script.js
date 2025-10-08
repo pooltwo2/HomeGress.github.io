@@ -104,3 +104,27 @@ document.addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
+
+
+let slideIndex = 0;
+
+function cambiarSlide(direccion) {
+  const slides = document.querySelector('#modal1 .slides'); // 👈 solo afecta a este modal
+  const totalSlides = slides.children.length;
+
+  slideIndex += direccion;
+  if (slideIndex < 0) slideIndex = totalSlides - 1;
+  if (slideIndex >= totalSlides) slideIndex = 0;
+
+  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+function abrirModal(id) {
+  document.getElementById(id).style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarModal(id) {
+  document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "auto";
+}
