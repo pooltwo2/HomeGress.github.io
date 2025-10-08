@@ -485,16 +485,21 @@ h2 {
 }
 
 .modal-cerrar {
-    background: #bd4d0ddf;
+    background: #a35629a2;
     color: #fff;
     border: none;
-    padding: 10px 18px;
-    font-size: 16px;
+    padding: 1px;
+    margin: 20px;
+    text-align: center;
+    font-size: 30px;
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 10px;
     width: 100%;
-    max-width: 200px;
+    max-width: 40px;
+    height: 40px;
+
+    margin-left: auto;
+    margin-right: 2px
 }
 
 .modal-cerrar:hover {
