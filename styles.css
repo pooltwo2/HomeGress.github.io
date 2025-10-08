@@ -514,6 +514,13 @@ h2 {
 }
 
 
+.texto-modal1 {
+    text-align: justify;
+    font-size: 13px;
+    color: #ddd;
+    line-height: 1.4;
+}
+
 
 /* GALERIA */
 .Galeria{
