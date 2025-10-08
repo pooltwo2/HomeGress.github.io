@@ -76,3 +76,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function abrirModal(id) {
+  const modal = document.getElementById(id);
+
+  // Mostrar modal como pop-up centrado
+  modal.style.display = "flex";
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100vw";
+  modal.style.height = "100vh";
+
+  // Bloquear scroll de fondo
+  document.body.style.overflow = "hidden";
+}
+
+
+function cerrarModal(id) {
+  document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Cerrar al hacer clic fuera del modal
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
